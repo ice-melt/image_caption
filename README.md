@@ -30,7 +30,11 @@ code:&emsp;[https://gitee.com/littlemonky/program][code001]
 
 bottom-up-attention模型:&emsp;[https://github.com/peteanderson80/bottom-up-attention][code002]
 
-> Github 上 attention 的代码实现
+> Github 上 top down or bottom up attention  的代码实现
+
+neural baby talk 模型:  [https://github.com/peteanderson80/neural-baby-talk][code003]
+> Github 上 新的 model 的实现方式
+
 
 #### 其他
 
@@ -42,7 +46,6 @@ bottom-up-attention模型:&emsp;[https://github.com/peteanderson80/bottom-up-att
 [Flickr8k_Dataset][dataset_01]
 
 [Flickr8k_text][dataset_02]
-
 
 ---
 
@@ -58,6 +61,9 @@ bottom-up-attention模型:&emsp;[https://github.com/peteanderson80/bottom-up-att
 
 [code001]: https://gitee.com/littlemonky/program
 [code002]: https://github.com/peteanderson80/bottom-up-attention
+[code003]: https://github.com/peteanderson80/neural-baby-talk
+
+
 
 [dataset_01]: http://nlp.cs.illinois.edu/HockenmaierGroup/Framing_Image_Description/Flickr8k_Dataset.zip
 [dataset_02]: http://nlp.cs.illinois.edu/HockenmaierGroup/Framing_Image_Description/Flickr8k_text.zip
