@@ -22,3 +22,10 @@ Blog:&emsp;[深度学习之image-caption系列（一）show and tell （NIC）�
 code:&emsp;[https://gitee.com/littlemonky/program](https://gitee.com/littlemonky/program)
 
 > 参考代码
+
+## 数据集
+
+[Flickr8k_Dataset](http://nlp.cs.illinois.edu/HockenmaierGroup/Framing_Image_Description/Flickr8k_Dataset.zip)
+
+[Flickr8k_text](http://nlp.cs.illinois.edu/HockenmaierGroup/Framing_Image_Description/Flickr8k_text.zip)
+
