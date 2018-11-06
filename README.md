@@ -32,7 +32,7 @@ bottom-up-attention模型:&emsp;[https://github.com/peteanderson80/bottom-up-att
 
 > Github 上 top down or bottom up attention  的代码实现
 
-neural baby talk 模型:  [https://github.com/peteanderson80/neural-baby-talk][code003]
+neural baby talk 模型:  [https://github.com/jiasenlu/NeuralBabyTalk][code003]
 > Github 上 新的 model 的实现方式
 
 
@@ -61,7 +61,7 @@ neural baby talk 模型:  [https://github.com/peteanderson80/neural-baby-talk][c
 
 [code001]: https://gitee.com/littlemonky/program
 [code002]: https://github.com/peteanderson80/bottom-up-attention
-[code003]: https://github.com/peteanderson80/neural-baby-talk
+[code003]: https://github.com/jiasenlu/NeuralBabyTalk
 
 
 
