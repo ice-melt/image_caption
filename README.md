@@ -6,7 +6,7 @@
 
 ## 相关资料参考
 
-#### Show and Tell
+#### 1.Show and Tell
 
 paper:&emsp;[Show and Tell: A Neural Image Caption Generator【arXiv:1411.4555】](arxiv14114555)
 
@@ -26,11 +26,11 @@ code:&emsp;[https://gitee.com/littlemonky/program][code001]
 
 > 参考代码
 
-#### attention
+#### 2.Attention
 
-attention 模型讲解： https://kexue.fm/archives/4765
+attention 模型讲解:&emsp;[https://kexue.fm/archives/4765](https://kexue.fm/archives/4765)
 
-> Github 上 attention 机制 代码实现 https://github.com/bojone/attention
+attention 代码实现:&emsp;[https://github.com/bojone/attention](https://github.com/bojone/attention)
 
 bottom-up-attention模型:&emsp;[https://github.com/peteanderson80/bottom-up-attention][code002]
 
@@ -39,8 +39,7 @@ bottom-up-attention模型:&emsp;[https://github.com/peteanderson80/bottom-up-att
 neural baby talk 模型:  [https://github.com/jiasenlu/NeuralBabyTalk][code003]
 > Github 上 新的 model 的实现方式 https://github.com/bojone/attention
 
-
-#### 其他
+#### 3.其他
 
 [机器翻译自动评估-BLEU算法详解][blog004]
 > 详细介绍了BLEU评价指标
