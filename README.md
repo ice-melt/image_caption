@@ -28,12 +28,16 @@ code:&emsp;[https://gitee.com/littlemonky/program][code001]
 
 #### attention
 
+attention 模型讲解： https://kexue.fm/archives/4765
+
+> Github 上 attention 机制 代码实现 https://github.com/bojone/attention
+
 bottom-up-attention模型:&emsp;[https://github.com/peteanderson80/bottom-up-attention][code002]
 
 > Github 上 top down or bottom up attention  的代码实现
 
 neural baby talk 模型:  [https://github.com/jiasenlu/NeuralBabyTalk][code003]
-> Github 上 新的 model 的实现方式
+> Github 上 新的 model 的实现方式 https://github.com/bojone/attention
 
 
 #### 其他
