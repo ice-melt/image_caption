@@ -3,8 +3,10 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import math
+
 import os
+import cv2
+import math
 import tensorflow as tf
 import configuration
 import inference_wrapper
@@ -12,8 +14,6 @@ from inference_utils import caption_generator
 from inference_utils import vocabulary
 from flask import Flask, render_template, request, redirect, url_for, make_response, jsonify
 from werkzeug.utils import secure_filename
-import os
-import cv2
 from datetime import timedelta
 
 
@@ -58,10 +58,12 @@ app.send_file_max_age_default = timedelta(seconds=1)
 # @app.route('/upload', methods=['POST', 'GET'])
 @app.route('/upload', methods=['POST', 'GET'])  # 添加路由
 def upload():
-    print('进入了upload')
     if request.method == 'POST':
+        if 'file' not in request.files:
+            return render_template('upload.html')
+
         f = request.files['file']
-        print('wtf f----',f)
+
         if not (f and allowed_file(f.filename)):
             return jsonify({"error": 1001, "msg": "请检查上传的图片类型，仅限于png、PNG、jpg、JPG、bmp"})
 

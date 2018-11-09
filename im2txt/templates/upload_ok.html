@@ -2,24 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Image Caption</title>
+    <title>Show and Tell</title>
 </head>
 <body>
-    <h1>请上传图片</h1>
-    <form action="" enctype='multipart/form-data' method='POST'>
-        <input type="file" name="file" style="margin-top:20px;"/>
+    <div style="text-align:center;">
+        <h1>Image Caption</h1>
+        <form action="" enctype='multipart/form-data' method='POST'>
+            <i>请选择你要上传的 图片：</i>
+            <input type="file" name="file" style="margin-top:20px;"/>
+
+            <!--
+            <input type="text" class="txt_input" name="name"  placeholder="请上传图片" style="margin-top:10px;"/>
+            -->
+            <input type="submit" value="上传" class="button-new" style="margin-top:15px;"/>
+        </form>
+        <h1>阁下输入的图片是:</h1>
+        <img src="{{ url_for('static', filename= './images/test.jpg') }}" width="300" height="300" alt="你的图片被外星人劫持了～～"/>
         <br>
-        <i> 图片标签：</i>
-        <input type="text" class="txt_input" name="name"  placeholder="请上传图片" style="margin-top:10px;"/>
-        <input type="submit" value="上传" class="button-new" style="margin-top:15px;"/>
-    </form>
-    <h1>阁下输入的图片是:</h1>
-    <img src="{{ url_for('static', filename= './images/test.jpg') }}" width="300" height="300" alt="你的图片被外星人劫持了～～"/>
-    <br>
-    <br>系统生成的一句话描述情况如下:
-    <br>
-    <span><font color="red" style="font-weight:bold;">{{s1}}</font></span><br>
-    <span><font color="red" style="font-weight:bold;">{{s2}}</font></span><br>
-    <span><font color="red" style="font-weight:bold;">{{s3}}</font></span><br>
+        <br>系统生成的一句话描述情况如下:
+        <br>
+        <span><font color="red" style="font-weight:bold;">{{s1}}</font></span><br>
+        <span><font color="red" style="font-weight:bold;">{{s2}}</font></span><br>
+        <span><font color="red" style="font-weight:bold;">{{s3}}</font></span><br>
+    </div>
 </body>
 </html>
