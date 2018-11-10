@@ -12,7 +12,8 @@ import configuration
 import inference_wrapper
 from inference_utils import caption_generator
 from inference_utils import vocabulary
-from flask import Flask, render_template, request, redirect, url_for, make_response, jsonify
+from flask import Flask, render_template, request, jsonify
+#from flask import redirect, url_for, make_response
 from werkzeug.utils import secure_filename
 from datetime import timedelta
 
@@ -77,16 +78,13 @@ def upload():
         img = cv2.imread(upload_path)
         cv2.imwrite(os.path.join(basepath, 'static/images', 'test.jpg'), img)
 
-        print('之前的 upload_path 是',upload_path)
         filenames = tf.gfile.Glob(upload_path)
         filename = filenames[0]
         # 得到上传图片进行 inference
-        print('the filename is ',filename)
+
         with tf.gfile.GFile(filename, "rb") as f:
             image = f.read()
         captions = generator.beam_search(sess, image)
-        print(captions)
-        print("Captions for image %s:" % os.path.basename(filename))
 
         # 每张图片都有三句话描述，所以 sentences 的长度是3
         sentences = {}
@@ -95,9 +93,10 @@ def upload():
             sentence = [vocab.id_to_word(w) for w in caption.sentence[1:-1]]
             sentence = " ".join(sentence)
             print("  %d) %s (p=%f)" % (i, sentence, math.exp(caption.logprob)))
-            sentences[i] = ("  %d) %s (p=%f)" % (i, sentence, math.exp(caption.logprob)))
-        print(sentences[0])
-        return render_template('upload_ok.html', s1=sentences[0])
+            sentences[i] = {}
+            sentences[i]['word'] = ("%s (p=%f)" % ( sentence, math.exp(caption.logprob)))
+        print(sentences)
+        return render_template('upload_ok.html', s=sentences)
 
     return render_template('upload.html')
 

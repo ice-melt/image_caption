@@ -19,11 +19,13 @@
         <h1>阁下输入的图片是:</h1>
         <img src="{{ url_for('static', filename= './images/test.jpg') }}" width="300" height="300" alt="你的图片被外星人劫持了～～"/>
         <br>
-        <br>系统生成的一句话描述情况如下:
-        <br>
-        <span><font color="red" style="font-weight:bold;">{{s1}}</font></span><br>
-        <span><font color="red" style="font-weight:bold;">{{s2}}</font></span><br>
-        <span><font color="red" style="font-weight:bold;">{{s3}}</font></span><br>
+        <div style="text-align:left;margin-left: 35%;">
+            <br>系统生成的一句话描述情况如下:
+            <br>
+            <span>1) <font color="red" style="font-weight:bold;">{{s[0]['word']}}</font></span><br>
+            <span>2) <font color="red" style="font-weight:bold;">{{s[1]['word']}}</font></span><br>
+            <span>3) <font color="red" style="font-weight:bold;">{{s[2]['word']}}</font></span><br>
+        </div>
     </div>
 </body>
 </html>
