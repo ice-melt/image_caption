@@ -52,6 +52,8 @@ neural baby talk 模型:  [https://github.com/jiasenlu/NeuralBabyTalk][code003]
 
 [Flickr8k TF-Record][dataset_03]
 
+[Flickr30k TF-Record][dataset_04]
+
 ---
 
 [DOC01]: https://gitee.com/ai100/projects-readme
@@ -73,4 +75,5 @@ neural baby talk 模型:  [https://github.com/jiasenlu/NeuralBabyTalk][code003]
 [dataset_01]: http://nlp.cs.illinois.edu/HockenmaierGroup/Framing_Image_Description/Flickr8k_Dataset.zip
 [dataset_02]: http://nlp.cs.illinois.edu/HockenmaierGroup/Framing_Image_Description/Flickr8k_text.zip
 [dataset_03]: https://www.tinymind.com/fandichao1998/datasets/flickr8k
+[dataset_04]: https://www.tinymind.com/fandichao1998/datasets/fk30kimagec
 
