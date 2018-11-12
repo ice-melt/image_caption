@@ -103,3 +103,13 @@ class TrainingConfig(object):
     # How many model checkpoints to keep.
     self.max_checkpoints_to_keep = 10
     self.keep_checkpoint_every_n_hours = 0.02
+
+
+class DisplayConfig(object):
+  """Wrapper class for training hyperparameters."""
+
+  def __init__(self):
+    # self.checkpoint_path = "data/train_output/model.ckpt-1000"
+    self.checkpoint_path = "data/output_mscoco/model.ckpt-200000"
+    # self.vocab_file = "data/word_counts.txt"
+    self.vocab_file = "data/word_counts_mscoco.txt"

@@ -54,6 +54,26 @@ neural baby talk 模型:  [https://github.com/jiasenlu/NeuralBabyTalk][code003]
 
 [Flickr30k TF-Record][dataset_04]
 
+## 代码相关说明
+
+#### 代码展示部分
+- 修改 `configuration.py` 代码中相关代码
+```python
+class DisplayConfig(object):
+  """Wrapper class for training hyperparameters."""
+
+  def __init__(self):
+    # self.checkpoint_path = "data/train_output/model.ckpt-1000"
+    self.checkpoint_path = "data/output_mscoco/model.ckpt-200000"
+    # self.vocab_file = "data/word_counts.txt"
+    self.vocab_file = "data/word_counts_mscoco.txt"
+```
+
+> 此部分代码为新增代码，这里只需要修改模型的ckpt路径和词频表的路径即可
+
+- 运行 `display.py`	
+
+
 ---
 
 [DOC01]: https://gitee.com/ai100/projects-readme

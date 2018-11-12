@@ -18,10 +18,9 @@ from werkzeug.utils import secure_filename
 from datetime import timedelta
 
 
-#checkpoint_path = "data/train_output/model.ckpt-1000"
-checkpoint_path = "data/output_mscoco/model.ckpt-200000"
-#vocab_file = "data/word_counts.txt"
-vocab_file = "data/word_counts_mscoco.txt"
+displayconfig = configuration.DisplayConfig()
+checkpoint_path = displayconfig.checkpoint_path
+vocab_file = displayconfig.vocab_file
 
 tf.logging.set_verbosity(tf.logging.INFO)
 
