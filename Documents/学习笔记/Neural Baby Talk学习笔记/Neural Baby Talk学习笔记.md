@@ -56,7 +56,7 @@
 
 
 
-![fig3](C:/Users/YuRong/AI%E5%AE%9E%E6%88%98/ImageCaption%E7%9C%8B%E5%9B%BE%E8%AF%B4%E8%AF%9D%E6%9C%BA%E5%99%A8%E4%BA%BA/Neural%20Baby%20Talk%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/fig3.png)
+![fig3](fig3.png)
 
 <center>图3</center>
 
