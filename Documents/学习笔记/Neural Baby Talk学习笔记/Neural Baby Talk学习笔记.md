@@ -98,7 +98,7 @@
 $$
 v_i=[v_i^p;v_i^l;v_i^g]
 $$
-Region feature$v_i$由3部分组成，$v_i^p$为pooling feature of RoI align layer（**不明白**），$v_i^l$为location feature，$v_i^g$为区域$i$的类标签对应的glove vector embedding。
+Region feature$v_i$由3部分组成，$v_i^p$为pooling feature of RoI align layer（**不明白**），$v_i^l$为location feature，$v_i^g$为区域$i$的类标签对应的glove vector embedding of the class label for region i。
 
 **Language model：**基本的注意力模型使用2层的LSTM
 
