@@ -3,13 +3,13 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-
 import os
 import cv2
 import math
 import tensorflow as tf
 import configuration
 import inference_wrapper
+import baidu_trans
 from inference_utils import caption_generator
 from inference_utils import vocabulary
 from flask import Flask, render_template, request, jsonify
@@ -19,6 +19,7 @@ from datetime import timedelta
 
 # 是否保持用户上传的图片
 IS_CACHE_IMG = False
+TRANS_Lang = 'zh'#[zh,en]
 # 设置允许的文件格式
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'JPG', 'PNG'])
 
@@ -52,25 +53,33 @@ app = Flask(__name__)
 # 设置静态文件缓存过期时间
 app.send_file_max_age_default = timedelta(seconds=1)
 sess,vocab,generator = initGraph()
+trans = baidu_trans.trans()
 
-# @app.route('/upload', methods=['POST', 'GET'])
-@app.route('/upload', methods=['POST', 'GET'])  # 添加路由
+@app.route('/', methods=['POST', 'GET'])  # 添加路由
 def upload():
+
+    option = {'en': '', 'zh': ''}
     msg = ""
-    print(msg)
 
     # noinspection PyBroadException
     try:
         if request.method == 'POST':
+
+            transFlag = request.form['language'] == 'zh'
+            if transFlag:
+                option = {'en': '', 'zh': 'selected'}
+            else:
+                option = {'en': 'selected', 'zh': ''}
+
             if 'file' not in request.files:
                 msg = "请选择图片文件上传"
-                return render_template('upload.html', message=msg)
+                return render_template('upload.html', message=msg,o=option)
 
             f = request.files['file']
 
             if not (f and allowed_file(f.filename)):
                 msg = "请检查上传的图片类型，仅限于png、PNG、jpg、JPG"
-                return render_template('upload.html', message=msg)
+                return render_template('upload.html', message=msg,o=option)
                 # return jsonify({"error": 1001, "msg": "请检查上传的图片类型，仅限于png、PNG、jpg、JPG"})
 
             basepath = os.path.dirname(__file__)  # 当前文件所在路径
@@ -93,16 +102,18 @@ def upload():
                 # Ignore begin and end words.
                 sentence = [vocab.id_to_word(w) for w in caption.sentence[1:-1]]
                 sentence = " ".join(sentence)
-                #print("  %d) %s (p=%f)" % (i, sentence, math.exp(caption.logprob)))
+                if transFlag:
+                    sentence = trans.baidu_fanyi(sentence)
+                print("  %d) %s (p=%f)" % (i, sentence, math.exp(caption.logprob)))
                 sentences[i] = {}
                 sentences[i]['word'] = ("%s (p=%f)" % ( sentence, math.exp(caption.logprob)))
             #print(sentences)
-            return render_template('upload_ok.html', s=sentences)
+            return render_template('upload_ok.html', s=sentences,o=option)
     except:
         #上传的文件是其他文件改成jpg格式会报错
         msg = 'something error,please make sure the uploaded file is in JPG format!'
-        return render_template('upload.html', message=msg)
-    return render_template('upload.html', message=msg)
+        return render_template('upload.html', message=msg,o=option)
+    return render_template('upload.html', message=msg,o=option)
 
 if __name__ == '__main__':
     app.debug = True
